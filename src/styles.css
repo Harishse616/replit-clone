@@ -1,0 +1,200 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+:root {
+  --bg: #f3f6ff;
+  --panel: #ffffff;
+  --line: #d9e0f5;
+  --ink: #15203b;
+  --accent: #0ea5a4;
+  --accent-strong: #047273;
+  --muted: #5d6680;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Space Grotesk", "Segoe UI", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 8% 18%, #d4f8de 0%, transparent 42%),
+    radial-gradient(circle at 92% 10%, #cce6ff 0%, transparent 38%),
+    linear-gradient(140deg, #f7fbff 0%, #eef4ff 100%);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.shell {
+  display: grid;
+  grid-template-rows: 64px 1fr;
+  min-height: 100vh;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+}
+
+.brand {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.runButton {
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(110deg, var(--accent), #24c39d);
+  color: #0e1c20;
+  padding: 0.6rem 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.runButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(14, 165, 164, 0.25);
+}
+
+.workspace {
+  display: grid;
+  grid-template-columns: 220px minmax(320px, 1fr) minmax(340px, 40%);
+  gap: 0.75rem;
+  padding: 0.75rem;
+  min-height: 0;
+}
+
+.sidebar,
+.editorPanel,
+.rightPanel {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.sidebar {
+  padding: 0.9rem;
+}
+
+.sidebar h2 {
+  margin: 0 0 0.75rem;
+  font-size: 0.88rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.sidebar ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.fileButton {
+  width: 100%;
+  text-align: left;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 0.45rem 0.55rem;
+  background: #f7f8fc;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.fileButton.active {
+  border-color: #9fd8d7;
+  background: #eaf9f9;
+  color: var(--accent-strong);
+}
+
+.editorPanel {
+  display: grid;
+  grid-template-rows: 38px 1fr;
+  min-height: 0;
+}
+
+.panelTitle,
+.previewHeader,
+.consoleHeader {
+  border-bottom: 1px solid var(--line);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  padding: 0 0.8rem;
+}
+
+.rightPanel {
+  display: grid;
+  grid-template-rows: 38px minmax(220px, 1fr) 180px;
+  min-height: 0;
+}
+
+.previewFrame {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: #fff;
+}
+
+.consolePanel {
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-rows: 38px 1fr;
+  min-height: 0;
+}
+
+.consoleBody {
+  background: #101522;
+  color: #cce0ff;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.82rem;
+  padding: 0.6rem 0.75rem;
+  overflow: auto;
+}
+
+.consoleBody p {
+  margin: 0 0 0.35rem;
+}
+
+@media (max-width: 1080px) {
+  .workspace {
+    grid-template-columns: 180px 1fr;
+    grid-template-rows: minmax(320px, 52vh) minmax(320px, 1fr);
+  }
+
+  .rightPanel {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 700px) {
+  .topbar {
+    padding: 0 0.75rem;
+  }
+
+  .workspace {
+    grid-template-columns: 1fr;
+    grid-template-rows: 220px minmax(280px, 48vh) minmax(320px, 1fr);
+  }
+
+  .rightPanel {
+    grid-column: auto;
+  }
+}
