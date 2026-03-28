@@ -3,6 +3,10 @@
 
 A Replit-style web IDE built with React + TypeScript + Vite.
 
+## Preview
+
+![Replit Clone Preview](./assets/preview.png)
+
 This project includes:
 - File explorer sidebar
 - Monaco code editor
