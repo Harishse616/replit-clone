@@ -5,9 +5,9 @@ A Replit-style web IDE built with React + TypeScript + Vite.
 
 ## Preview
 
-Live app: https://replit-clone-d2m8ihn29-harishse616-7525s-projects.vercel.app
+Live app: https://replit-clone-delta.vercel.app/
 
-[![Replit Clone Preview](./assets/preview.png)](https://replit-clone-d2m8ihn29-harishse616-7525s-projects.vercel.app)
+[![Replit Clone Preview](./assets/preview.png)](https://replit-clone-delta.vercel.app/)
 
 This project includes:
 - File explorer sidebar
